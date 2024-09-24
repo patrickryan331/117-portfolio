@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static './css/base.css' %}">
+    <link rel="stylesheet" href="{% static './css/header.css' %}">
+    <link rel="stylesheet" href="{% static './css/sections.css' %}">
+    <link rel="stylesheet" href="{% static './css/responsive.css' %}">
+
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+
+<body>
+
+
+    <header class="center-row">
+        
+        <!-- left section -->
+        <div class="logo center-row">
+            <a href="{% url 'home' %}">
+                <h2>Patrick Ryan</h2>
+            </a>
+        </div>
+        
+        <!-- right section -->
+        <nav class="nav-menu">
+            
+            <!-- hamburger button -->
+            <input type="checkbox" id="checkBox">
+
+            <div class="hamburger-btn">
+                <label for="checkBox">
+                <span></span>
+                <span></span>
+                <span></span>
+                </label>
+            </div>
+
+            <!-- Menu Options -->
+            <div class="nav-options center-row">
+                <a href="{% url 'about' %}">About Me</a>
+                <a href="">Projects</a>
+                <a href="">Experience</a>
+                <a href="">Contact Me</a>
+            </div>
+        </nav>
+    </header>
+
+
+    {% block content %}
+
+
+    {% endblock content %}
+
+
+
+
+</body>
+</html>
