@@ -36,6 +36,8 @@
 
 .projects-list {
     margin: 2rem 0px;
+    flex-wrap: wrap;
+    gap: 3rem;
 }
 
 .project-card:hover {
@@ -73,7 +75,7 @@ a p:nth-child(3) {
 }
 
 a p:nth-child(4) {
-    margin: 0.5rem 0px;
+    margin: 0.5rem 0px 0.5rem 0px;
     font-weight: bolder;
     font-style: italic;
     letter-spacing: 0.5rem;
@@ -89,6 +91,8 @@ a p:nth-child(4) {
 
 .experience-list {
     margin: 2rem 0px;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
 
 .experience-card:hover {
@@ -99,10 +103,12 @@ a p:nth-child(4) {
 .experience-card {
     width: 25rem;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     padding: 0.5rem; 
     margin: 2rem 0px;
     border: solid .5px var(--primary-color);
+    align-items: baseline;
 }
 
 .experience-card img {
@@ -127,16 +133,21 @@ a p:nth-child(4) {
     font-size: 1.2rem;
     font-weight: bolder;
     margin: 0.5rem 0px;
-}
+    }
 
 .experience-card p:nth-child(3) {
     
     font-weight: 200;
+    text-align: left;
 }
 
 .experience-card p:nth-child(4) {
-    margin: 0.5rem 0px;
+    margin: 0.7rem 0px 0.7rem 0px;
     font-weight: bolder;
     font-style: italic;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.2rem;
+}
+
+.about-name {
+    margin-top: 1rem;
 }

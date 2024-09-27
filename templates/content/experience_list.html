@@ -13,22 +13,24 @@
 
     <div class="experience-list center-row">
         
+
+        {% for experience in experiences %}
+
         <div class="experience-card">
 
-                <p>Name of school or company</p>
-                <p>Course name / Job position</p>
-                <p>A short description here about the course or the responsibilities in the job position. No more than five lines of text</p>
-                <p>Month YYYY - Month YYYY</p>
+                <p>{{ experience.name }}</p>
+                <p>{{ experience.courseOrPosition }}</p>
+                <p>{{ experience.description }}</p>
+                <p>{{ experience.dateAndYear}}</p>
 
                 <div class="experience-skills">
-                    <label class="text-label">Django</label>
-                    <label class="text-label">CSS</label>
-                    <label class="text-label">HTML</label>
-                    <label class="text-label">OTHER</label>
-                    <label class="text-label">OTHER</label>
-                    <label class="text-label">OTHER</label>
+                    {% for skill in experience.skills.all %}
+                    <label class="text-label">{{ skill.name }}</label>
+                    {% endfor %}
                 </div>
         </div>
+
+        {% endfor %}
         
     </div>
 
@@ -38,3 +40,4 @@
 
 
 {% endblock content %}
+

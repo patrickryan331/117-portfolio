@@ -17,4 +17,16 @@ class Project(models.Model):
     skills = models.ManyToManyField(Skill)
 
     def __str__(self):
-        return f"{self.name} -  ({self.year})"
+        return f"{self.name} - ({self.year})"
+    
+
+
+class Experience(models.Model):
+    name = models.CharField(max_length=100)
+    courseOrPosition = models.CharField(max_length=50)
+    description =   models.TextField()
+    dateAndYear = models.CharField(max_length=40)
+    skills = models.ManyToManyField(Skill)
+
+    def __str__(self):
+        return f"{self.name} - ({self.dateAndYear})"
