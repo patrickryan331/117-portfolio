@@ -5,7 +5,9 @@
 }
 
 .about-image-container img{
-    width: 50%;
+    width: 80%;
+    border: black 1px solid;;
+    border-radius: 25px;
 }
 .about-image-container {
     width: 30%;
@@ -95,10 +97,6 @@ a p:nth-child(4) {
     flex-wrap: wrap;
 }
 
-.experience-card:hover {
-    /* opacity: 0.7; */
-    border: solid 3.5px var(--primary-color);
-}
 
 .experience-card {
     width: 25rem;
@@ -150,4 +148,35 @@ a p:nth-child(4) {
 
 .about-name {
     margin-top: 1rem;
+}
+
+
+/* Contact Section */
+
+
+.contact-section #emailForm {
+    border: solid 1px var(--primary-color-100);
+    border-radius: 4px;
+    padding: 1rem 2.5rem 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.contact-section p {
+    margin-bottom: 1rem;
+}
+
+.contact-section h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-section h2 span {
+    color: var(--secondary-color-600);
+    font-family: var(--lobster-font);
 }

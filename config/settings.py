@@ -11,6 +11,18 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import certifi
+import environ
+import os
+
+# secure connection
+os.environ['SSL_CERT_FILE'] = certifi.where()
+
+# Load environment file
+env = environ.Env()
+environ.Env.read_env()
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,3 +136,17 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+# SMTP CONFIGURATION
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+EMAIL_HOST_USER =  env('HOST_EMAIL')
+EMAIL_HOST_PASSWORD = env('HOST_PASSWORD')
